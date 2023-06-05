@@ -23,7 +23,7 @@ int check_cycle(listint_t *list)
 		{
 			return (1);
 		}
-		s = head;
+		s = list;
 		while (s != d)
 		{
 			if (s == d->next)
