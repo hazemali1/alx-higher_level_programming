@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * insert_node - Insert at index
@@ -13,8 +12,8 @@ listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *s, *e, *w, *h;
 
-	if (*head == NULL)
-		printf("haha");
+	if (head == NULL)
+		return (NULL);
 	s = malloc(sizeof(listint_t));
 	if (s == NULL)
 		return (NULL);
