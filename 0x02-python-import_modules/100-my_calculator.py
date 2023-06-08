@@ -14,5 +14,5 @@ if __name__ == "__main__":
     elif sys.argv[2] == "/":
         print("{} / {} = {}".format(sys.argv[1], sys.argv[3], cal.div(sys.argv[1], sys.argv[3])))
     else:
-        print(Unknown operator. Available operators: +, -, * and /)
+        print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
