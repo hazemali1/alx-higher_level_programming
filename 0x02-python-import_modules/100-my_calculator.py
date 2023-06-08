@@ -2,17 +2,20 @@
 if __name__ == "__main__":
     import calculator_1 as cal
     import sys
+    if len(sys.argv) == 4:
+        a = int(sys.argv[1])
+        b = int(sys.argv[3])
     if len(sys.argv) != 4:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         exit(1)
     elif sys.argv[2] == "+":
-        print("{} + {} = {}".format(sys.argv[1], sys.argv[3], cal.add(sys.argv[1], sys.argv[3])))
+        print("{} + {} = {}".format(a, b, cal.add(a, b)))
     elif sys.argv[2] == "-":
-        print("{} - {} = {}".format(sys.argv[1], sys.argv[3], cal.sub(sys.argv[1], sys.argv[3])))
+        print("{} - {} = {}".format(a, b, cal.sub(a, b)))
     elif sys.argv[2] == "*":
-        print("{} * {} = {}".format(sys.argv[1], sys.argv[3], cal.mul(sys.argv[1], sys.argv[3])))
+        print("{} * {} = {}".format(a, b, cal.mul(a, b)))
     elif sys.argv[2] == "/":
-        print("{} / {} = {}".format(sys.argv[1], sys.argv[3], cal.div(sys.argv[1], sys.argv[3])))
+        print("{} / {} = {}".format(a, b, cal.div(a, b)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
