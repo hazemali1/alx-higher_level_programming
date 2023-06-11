@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * is_palindrome - Check
@@ -10,7 +9,6 @@
 */
 int is_palindrome(listint_t **head)
 {
-	printf("lol");
 	listint_t *s, *d, *f;
 
 	s = *head;
