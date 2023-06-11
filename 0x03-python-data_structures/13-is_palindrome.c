@@ -10,20 +10,37 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *s, *d, *f;
+	int w = 0, q, l[1024];
 
 	s = *head;
-	d = *head;
-	while (d->next != NULL)
-		d = d->next;
-	while (s != d)
+	while (s != NULL)
 	{
-		if (s->n != d->n)
-			return (0);
-		f = *head;
-		while (f->next != d)
-			f = f->next;
+		w++;
 		s = s->next;
-		d = f;
+	}
+	if (w % 2 == 0)
+		w = w / 2;
+	else
+		w = w / 2 + 1;
+	d = *head;
+	while (w > 0)
+	{
+		d = d->next;
+		w--;
+	}
+	for (q = 0; d != NULL; q++)
+	{
+		l[q] = d->n;
+		d = d->next;
+	}
+	f = *head;
+	q--;
+	while (q >= 0)
+	{
+		if (f->n != l[q])
+			return (0);
+		f = f->next;
+		q--;
 	}
 	return (1);
 }
