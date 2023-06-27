@@ -3,9 +3,8 @@ def list_division(my_list_1, my_list_2, list_length):
     s = []
     for d, w in zip(my_list_1, my_list_2):
         try:
-            u = d / w
             if len(s) < list_length:
-                s = s + [u]
+                s = s + [d / w]
         except TypeError:
             print('wrong type')
             if len(s) < list_length:
