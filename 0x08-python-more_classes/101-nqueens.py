@@ -12,10 +12,10 @@ if __name__ == "__main__":
         print("Usage: nqueens N")
         sys.exit(1)
     if not sys.argv[1].isdigit():
-        print("Nshould be int")
+        print("N must be a number\n")
         sys.exit(1)
     if int(sys.argv[1]) < 4:
-        print("N should be aleast 4")
+        print("N must be at least 4\n")
         sys.exit(1)
     s = []
     for i in range(int(sys.argv[1])):
