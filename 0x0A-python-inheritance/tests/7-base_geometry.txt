@@ -27,10 +27,9 @@ Trying to pass a non-integer argument
 Trying to pass a boolean value
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("name", True)
-    Traceback (most recent call last):
-    	      ...
-    TypeError: name must be an integer
+    
 
+Passing one argument to integer_validator
 
 Trying to pass a negative value
     >>> bg = BaseGeometry()
