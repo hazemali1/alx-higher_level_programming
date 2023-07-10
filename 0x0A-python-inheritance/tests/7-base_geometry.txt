@@ -74,3 +74,8 @@
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 ...
 [TypeError] integer_validator() missing 2 required positional arguments: 'name' and 'value'
+>>> try:
+...	bg.area(5, 5)
+... except Exception as e:
+...	print("[{}] {}".format(e.__class__.__name__, e))
+[TypeError] area() takes 1 positional argument but 3 were given
