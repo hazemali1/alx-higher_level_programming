@@ -14,3 +14,10 @@
 >>> listt = MyList([1, 4, 2])
 >>> listt.print_sorted()
 [1, 2, 4]
+>>> s = []
+>>> haha = MyList(s)
+>>> haha.print_sorted()
+[]
+>>> hehe = MyList([-1, 4, -3, -6])
+>>> hehe.print_sorted()
+[-6, -3, -1, 4]
