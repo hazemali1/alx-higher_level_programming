@@ -95,3 +95,9 @@
 ... except Exception as e:
 ...     print("[{}] {}".format(e.__class__.__name__, e))
 [TypeError] area() takes 1 positional argument but 2 were given
+>>> try:
+...     bg.integer_validator("distance", 3.17)
+... except Exception as e:
+...     print("[{}] {}".format(e.__class__.__name__, e))
+...
+[TypeError] distance must be an integer
