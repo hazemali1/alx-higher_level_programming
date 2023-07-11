@@ -10,7 +10,7 @@ d = 0
 w = {}
 q = ['200', '301', '400', '401', '403', '404', '405', '500']
 try:
-    for i in sys.stdin:
+    for a in sys.stdin:
         if d == 10:
             print("File size: {}".format(s))
             for j in sorted(w):
@@ -18,7 +18,7 @@ try:
             d = 1
         else:
             d += 1
-        a = i.split()
+        a = a.split()
         x = a[-2]
         try:
             s += int(a[-1])
