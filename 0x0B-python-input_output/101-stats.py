@@ -22,7 +22,7 @@ try:
         x = a[-2]
         try:
             s += int(a[-1])
-        except Exception:
+        except (IndexError, ValueError):
             pass
         try:
             if x in q:
