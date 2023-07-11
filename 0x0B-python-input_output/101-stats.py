@@ -18,7 +18,7 @@ try:
             d = 1
         else:
             d += 1
-        a = line.split()
+        a = i.split()
         x = a[-2]
         try:
             s += int(a[-1])
