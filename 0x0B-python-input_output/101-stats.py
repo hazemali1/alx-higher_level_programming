@@ -22,7 +22,7 @@ try:
         x = a[-2]
         try:
             s += int(a[-1])
-        except (IndexError, ValueError):
+        except Exception:
             pass
         try:
             if x in q:
@@ -30,7 +30,7 @@ try:
                     w[x] = 1
                 else:
                     w[x] += 1
-        except Exception:
+        except IndexError:
             pass
     print("File size: {}".format(s))
     for j in sorted(w):
