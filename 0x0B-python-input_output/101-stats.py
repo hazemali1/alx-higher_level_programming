@@ -19,17 +19,16 @@ try:
         else:
             d += 1
         a = a.split()
-        x = a[-2]
         try:
             s += int(a[-1])
         except Exception:
             pass
         try:
-            if x in q:
-                if w.get(x, -1) == -1:
-                    w[x] = 1
+            if a[-2] in q:
+                if w.get(a[-2], -1) == -1:
+                    w[a[-2]] = 1
                 else:
-                    w[x] += 1
+                    w[a[-2]] += 1
         except IndexError:
             pass
     print("File size: {}".format(s))
