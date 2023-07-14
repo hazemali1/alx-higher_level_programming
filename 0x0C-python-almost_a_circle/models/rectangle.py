@@ -66,3 +66,53 @@ class Rectangle(Base):
 
     def area(self):
         return self.__width * self.__height
+
+    def display(self):
+        for s in range(self.__y):
+            print("")
+        for i in range(self.__height):
+            for d in range(self.__x):
+                print(" ", end="")
+            for j in range(self.__width):
+                print("#", end="")
+            print("")
+
+    def __str__(self):
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
+                                                        self.x, self.y,
+                                                        self.width,
+                                                        self.height))
+
+    def update(self, *args, **kwargs):
+        if args and len(args) != 0:
+            x = 1
+            for a in args:
+                if x == 1:
+                    if a is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = a
+                elif x == 2:
+                    self.width = a
+                elif x == 3:
+                    self.height = a
+                elif x == 4:
+                    self.x = a
+                elif x == 5:
+                    self.y = a
+                x += 1
+        elif kwargs and len(kwargs) != 0:
+            for key, value in kwargs.items():
+                if key == "id":
+                    if value is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = value
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                elif key == "y":
+                    self.y = value
