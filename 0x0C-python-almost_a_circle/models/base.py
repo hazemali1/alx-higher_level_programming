@@ -101,11 +101,13 @@ class Base:
     @staticmethod
     def draw(list_rectangles, list_squares):
         s = turtle.Turtle()
-        s.hideturtle
+        s.hideturtle()
         s.screen.bgcolor("red")
         for i in list_rectangles:
             s.color("white")
+            s.up()
             s.goto(i.x, i.y)
+            s.down()
             s.forward(i.width)
             s.left(90)
             s.forward(i.height)
@@ -116,7 +118,9 @@ class Base:
             s.left(90)
         for j in list_squares:
             s.color("black")
+            s.up()
             s.goto(j.x, j.y)
+            s.down()
             s.forward(j.width)
             s.left(90)
             s.forward(j.height)
