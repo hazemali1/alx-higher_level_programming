@@ -97,3 +97,32 @@ class Base:
                 return q
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        s = turtle.Turtle()
+        s.hideturtle
+        s.screen.bgcolor("red")
+        for i in list_rectangles:
+            s.color("white")
+            s.goto(i.x, i.y)
+            s.forward(i.width)
+            s.left(90)
+            s.forward(i.height)
+            s.left(90)
+            s.forward(i.width)
+            s.left(90)
+            s.forward(i.height)
+            s.left(90)
+        for j in list_squares:
+            s.color("black")
+            s.goto(j.x, j.y)
+            s.forward(j.width)
+            s.left(90)
+            s.forward(j.height)
+            s.left(90)
+            s.forward(j.width)
+            s.left(90)
+            s.forward(j.height)
+            s.left(90)
+        turtle.exitonclick()
