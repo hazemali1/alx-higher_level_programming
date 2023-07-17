@@ -230,6 +230,49 @@ class Tese_rectangle(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle(1, 1, 3, -1)
 
+    def test_for_width_and_height(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("zomme", "hazem")
+
+    def test_for_width_and_x(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("zoome", 1, "hazem")
+
+    def test_for_widht_and_y(self):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle("zoome", 1, 2, "hazem")
+
+    def test_for_height_and_x(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(1, "zoome", "hazem")
+
+    def test_for_height_and_y(self):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle(1, "zoome", 2, "hazem")
+
+    def test_for_x_and_y(self):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle(1, 2, "zoome", "hazem")
+
+    def test_for_area(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(2, r.area())
+
+    def test_for_area_bigger(self):
+        r = Rectangle(111111111111111, 22222222222222, 3, 4, 5)
+        self.assertEqual((111111111111111 * 22222222222222), r.area())
+
+    def test_for_area_after_update(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        r.width = 6
+        r.height = 7
+        self.assertEqual(42, r.area())
+
+    def test_for_sending_arg_with_area(self):
+        r = Rectangle(1, 2, 3, 4, 5)
+        with self.assertRaises(TypeError):
+            r.area(6)
+
 
 if __name__ == "__main__":
     unittest.main()
