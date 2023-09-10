@@ -1,2 +1,3 @@
 -- top score
-SELECT score , name from second_table ORDER BY score DESC;
+SELECT score , name 
+from second_table ORDER BY score DESC;
