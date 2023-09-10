@@ -1,3 +1,3 @@
 -- list number
 SELECT score, COUNT(*) AS number
-FROM second_table ORDER BY number DESC;
+FROM second_table GROUP BY score ORDER BY number DESC;
