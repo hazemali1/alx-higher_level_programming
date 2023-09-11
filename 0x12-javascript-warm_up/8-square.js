@@ -4,7 +4,8 @@ if (isNaN(process.argv[2])) {
 } else {
   for (let i = 0; i < process.argv[2]; i++) {
     for (let j = 0; j < process.argv[2]; j++) {
-      console.log('X');
+	process.stdout.write('X');
     }
+    console.log();
   }
 }
