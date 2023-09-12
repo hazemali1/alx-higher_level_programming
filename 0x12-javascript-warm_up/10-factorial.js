@@ -9,4 +9,5 @@ if (process.argv.length === 2) {
 } else {
   d = factorial(process.argv[2]);
 }
+
 console.log(d);
