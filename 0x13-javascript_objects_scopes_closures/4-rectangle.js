@@ -22,11 +22,6 @@ class Rectangle {
     this.height = s;
   }
 
-  mirror () {
-    this.width = this.height;
-    this.height = this.width;
-  }
-
   double () {
     this.width *= 2;
     this.height *= 2;
