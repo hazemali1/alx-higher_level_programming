@@ -17,6 +17,12 @@ class Rectangle {
   }
 
   rotate () {
+    const s = this.width;
+    this.width = this.height;
+    this.height = s;
+  }
+
+  mirror () {
     this.width = this.height;
     this.height = this.width;
   }
