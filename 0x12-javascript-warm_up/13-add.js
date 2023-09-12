@@ -1,4 +1,4 @@
 #!/usr/bin/node
-function add(s, d) {
+window.add = function(s, d) {
   return s + d;
 }
