@@ -9,12 +9,12 @@ class Square extends Squar {
   }
 
   charPrint (c) {
-    for (let i = 0; i < this.size; i++) {
-      for (let j = 0; j < this.size; j++) {
+    for (let i = 0; i < this.width; i++) {
+      for (let j = 0; j < this.height; j++) {
         if (c === undefined) {
           process.stdout.write('X');
         } else {
-          process.stdout.write('r');
+          process.stdout.write(c);
         }
       }
       console.log();
