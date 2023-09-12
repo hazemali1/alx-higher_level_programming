@@ -1,6 +1,6 @@
 #!/usr/bin/node
-function factorial(s) {
-  return s === 1? 1 : s * factorial(s - 1);
+function factorial (s) {
+  return s === 1 ? 1 : s * factorial(s - 1);
 }
 
 let d;
