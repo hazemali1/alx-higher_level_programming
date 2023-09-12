@@ -12,7 +12,7 @@ class Square extends Squar {
     for (let i = 0; i < this.size; i++) {
       for (let j = 0; j < this.size; j++) {
         if (c === undefined) {
-          process.stdout.write('X');
+          process.stdout.write('r');
         } else {
           process.stdout.write(c);
         }
