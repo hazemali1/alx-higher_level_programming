@@ -17,7 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).order_by(State.id).all()
+    result = d.query(State).order_by(State.id).first()
 
-    for state in result:
-        print("{}: {}".format(state.id, state.name))
+    if result:
+        print("{}: {}".format(result.id, result.name))
+    else:
+        print('Nothing')
