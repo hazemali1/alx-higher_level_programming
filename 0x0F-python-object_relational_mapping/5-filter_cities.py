@@ -22,5 +22,6 @@ if __name__ == '__main__':
     d = (argv[4],)
     mycursor.execute(s, d)
 
-    for row in mycursor.fetchall():
-        print(row)
+    rows = mycursor.fetchall()
+    q = ', '.join([row[0] for row in rows])
+    print(q)
