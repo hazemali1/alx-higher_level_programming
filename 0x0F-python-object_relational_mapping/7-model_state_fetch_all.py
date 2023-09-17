@@ -2,15 +2,22 @@
 """
 class
 """
-from sqlalchemy import Column, Integer, String
-from sqlalchemy.ext.declarative import declarative_base
+from model_state import Base, State
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sys import argv
 
 
-Base = declarative_base()
+if __name__ == "__main__":
+    s = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
+        argv[1], argv[2], argv[3]), pool_pre_ping=True)
 
+Base.metadata.create_all(s)
 
-class State(Base):
-    """id and name"""
-    __tablename__ = 'states'
-    id = Column(Integer, autoincrement=True, primary_key=True)
-    name = Column(String(128), nullable=False)
+Session = sessionmaker(bind=engine)
+d - Session()
+
+result = d.query(State).order_by(State.id).all()
+
+for state in result:
+    print("{}: {}".format(state.id, state.name))
