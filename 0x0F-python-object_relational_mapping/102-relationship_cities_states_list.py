@@ -18,8 +18,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).order_by(State.id).all()
-    for state in result:
-        print("{}: {}".format(state.id, state.name))
-        for c in state.cities:
-            print("\t{}: {}".format(c.id, c.name))
+    result = d.query(City).order_by(City.id).all()
+    for city in result:
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
