@@ -17,8 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).filter(State.name.like('%a%')).order_by(State.id)\
-              .all()
+    result = d.query(State).filter(State.name.like('%a%')).all()
 
     for state in result:
-        print("{}: {}".format(state.id, state.name))
+        d.delete(state)
+
+    d.commit()
