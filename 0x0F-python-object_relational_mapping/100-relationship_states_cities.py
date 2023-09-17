@@ -2,10 +2,11 @@
 """
 class
 """
-from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sys import argv
+from relationship_state import Base, State
+from relationship_city import City
 
 
 if __name__ == "__main__":
@@ -17,7 +18,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).order_by(State.id).all()
+    state = State(name="California")
+    state.cities.append(City(name="San Francisco"))
 
-    for state in result:
-        print("{}: {}".format(state.id, state.name))
+    d.add(state)
+    d.commit()
