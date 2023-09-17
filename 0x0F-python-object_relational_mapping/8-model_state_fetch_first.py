@@ -14,12 +14,12 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(s)
 
-    Session = sessionmaker()
-    d = Session(bind=s)
+    Session = sessionmaker(bind=s)
+    d = Session()
 
     result = d.query(State).order_by(State.id).first()
 
     if result:
-        print(result)
+        print("{}: {}".format(result.id, result.name))
     else:
         print('Nothing')
