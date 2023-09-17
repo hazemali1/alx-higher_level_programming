@@ -17,7 +17,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).order_by(State.id).all()
-
-    for state in result:
-        print("{}: {}".format(state.id, state.name))
+    update = d.query(State).filter_by(id='2').first()
+    update.name = "New Mexico"
+    d.commit()
