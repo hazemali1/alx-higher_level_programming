@@ -18,7 +18,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State, City).order_by(City.id).all()
+    result = d.query(State, City).join(City).order_by(City.id)
 
     for state, city in result:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
