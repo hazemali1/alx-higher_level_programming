@@ -17,7 +17,7 @@ if __name__ == '__main__':
 
     mycursor = db.cursor()
     s = "SELECT * FROM states WHERE name LIKE %s ORDER BY states.id"
-    d = 'N%'
+    d = ()'N%',)
     mycursor.execute(s, d)
 
     for row in mycursor.fetchall():
