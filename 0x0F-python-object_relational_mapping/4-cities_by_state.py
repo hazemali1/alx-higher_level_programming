@@ -16,7 +16,8 @@ if __name__ == '__main__':
     )
 
     mycursor = db.cursor()
-    mycursor.execute("SELECT cities.id, cities.name, states.name FROM cities, states WHERE cities.state_id = states.id ORDER BY cities.id")
+    mycursor.execute("SELECT cities.id, cities.name, states.name FROM cities,\
+                     states WHERE cities.state_id = states.id ORDER BY cities.id")
 
     for row in mycursor.fetchall():
         print(row)
