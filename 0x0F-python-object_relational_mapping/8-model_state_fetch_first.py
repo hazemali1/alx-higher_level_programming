@@ -14,8 +14,8 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(s)
 
-    Session = sessionmaker(bind=s)
-    d = Session()
+    Session = sessionmaker()
+    d = Session(bind=s)
 
     result = d.query(State).order_by(State.id).first()
 
