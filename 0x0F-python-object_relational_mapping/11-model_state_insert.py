@@ -17,7 +17,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).order_by(State.id).all()
+    obj = State(name="Louisiana")
+    d.add(obj)
+    d.commit()
 
-    for state in result:
-        print("{}: {}".format(state.id, state.name))
+    print(obj.id)
