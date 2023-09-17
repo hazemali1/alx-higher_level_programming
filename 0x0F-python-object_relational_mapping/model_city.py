@@ -2,7 +2,7 @@
 """
 class
 """
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
 
 
