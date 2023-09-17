@@ -16,7 +16,7 @@ if __name__ == '__main__':
     )
 
     mycursor = db.cursor()
-    s = "SELECT * FROM states WHERE name LIKE %s ORDER BY states.id"
+    s = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY states.id"
     d = ('N%',)
     mycursor.execute(s, d)
 
