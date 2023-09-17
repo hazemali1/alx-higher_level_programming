@@ -17,8 +17,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=s)
     d = Session()
 
-    result = d.query(State).filter(State.name.like('%a%')).order_by(State.id)\
-              .all()
+    result = d.query(State).filter(State.name == argv[4]).first()
 
-    for state in result:
-        print("{}: {}".format(state.id, state.name))
+    if result:
+        print("{}".format(result.id))
+    else:
+        print("Not found")
