@@ -1,3 +1,3 @@
 #!/bin/bash
 #OPTIONS
-curl -sX OPTIONS $1 | grep 'Allow' | cut -c 8-
+curl -sIX OPTIONS $1 | grep 'Allow' | cut -c 8-
