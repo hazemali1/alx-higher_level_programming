@@ -12,6 +12,5 @@ def find_peak(list_of_integers):
         return list_of_integers[0]
     if list_of_integers[-1] > list_of_integers[-2]:
         return list_of_integers[-1]
-    s = list_of_integers[1:-2]
-    print(s)
+    s = list_of_integers[1:-1]
     return find_peak(s)
