@@ -1,7 +1,9 @@
 #!/usr/bin/python3
+"""find peak"""
 
 
 def find_peak(list_of_integers):
+    """list of int"""
     if len(list_of_integers) == 0:
         return None
     if len(list_of_integers) == 1:
