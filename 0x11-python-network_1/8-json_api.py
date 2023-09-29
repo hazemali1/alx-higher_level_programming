@@ -18,11 +18,10 @@ if __name__ == "__main__":
         s = sys.argv[1]
     q = {'q': s}
     s = requests.post('http://0.0.0.0:5000/search_user', data=q)
-    try:
-        eval(str(s.json()))
+    if s.json() is None:
+        print('Not a valid JSON')
+    else:
         if len(s.json()) == 0:
             print('No result')
         else:
             print('[{}] {}'.format(s.json()['id'], s.json()['name']))
-    except SyntaxError:
-        print('Not a valid JSON')
