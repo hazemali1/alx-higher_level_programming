@@ -20,4 +20,4 @@ if __name__ == "__main__":
     for d in s.json():
         if count <= 10:
             count += 1
-            print(d['sha'], ': ', d['commit']['author']['name'])
+            print(d['sha'], ':', d['commit']['author']['name'])
