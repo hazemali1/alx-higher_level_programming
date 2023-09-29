@@ -18,8 +18,8 @@ if __name__ == "__main__":
         s = sys.argv[1]
     q = {'q': s}
     s = requests.post('http://0.0.0.0:5000/search_user', data=q)
-    if s.json() is None:
-        print('Not a valid JSONj')
+    if is not s.json():
+        print('Not a valid JSON')
     else:
         if len(s.json()) == 0:
             print('No result')
