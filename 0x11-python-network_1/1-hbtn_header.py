@@ -5,7 +5,7 @@ import sys
 id
 """
 
-
-with urllib.request.urlopen(sys.argv[1]) as s:
-    d = s.headers.__dict__
-    print(d['_headers'][-3][1])
+if __name__ == "__main__":
+    with urllib.request.urlopen(sys.argv[1]) as s:
+        d = s.headers.__dict__
+        print(d['_headers'][-3][1])
