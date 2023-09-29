@@ -15,4 +15,7 @@ if __name__ == "__main__":
     """
     with urllib.request.urlopen(sys.argv[1]) as s:
         d = s.headers.__dict__
-        print(d['_headers'][-2][1])
+        q = d['_headers']
+        for i in q:
+            if i[0] == 'X-Request-Id':
+                print(i[1])
