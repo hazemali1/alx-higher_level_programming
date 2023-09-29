@@ -19,7 +19,7 @@ if __name__ == "__main__":
     q = {'q': s}
     s = requests.post('http://0.0.0.0:5000/search_user', data=q)
     try:
-        eval(s.json())
+        eval(str(s.json()))
         if len(s.json()) == 0:
             print('No result')
         else:
