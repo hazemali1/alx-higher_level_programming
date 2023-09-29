@@ -13,7 +13,7 @@ if __name__ == "__main__":
     """
     import
     """
-    s = requests.get('https://api.github.com/user/repos', auth=(sys.argv[1],
+    s = requests.get('https://api.github.com/user', auth=(sys.argv[1],
                                                           sys.argv[2]))
     try:
         print(s.json()['id'])
