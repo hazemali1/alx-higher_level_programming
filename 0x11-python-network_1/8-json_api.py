@@ -18,7 +18,7 @@ if __name__ == "__main__":
         s = sys.argv[1]
     q = {'q': s}
     s = requests.post('http://0.0.0.0:5000/search_user', data=q)
-    if s is not json():
+    if s.json() is not json:
         print('Not a valid JSON')
     else:
         if len(s.json()) == 0:
