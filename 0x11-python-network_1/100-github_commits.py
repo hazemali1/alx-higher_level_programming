@@ -17,7 +17,10 @@ if __name__ == "__main__":
                                                               sys.argv[2])
     s = requests.get(url)
     count = 1
-    for d in s.json():
-        if count <= 10:
-            count += 1
-            print('{}: {}'.format(d['sha'], d['commit']['author']['name']))
+    try:
+        for d in s.json():
+            if count <= 10:
+                count += 1
+                print('{}: {}'.format(d['sha'], d['commit']['author']['name']))
+    except IndexError:
+        print('error')
