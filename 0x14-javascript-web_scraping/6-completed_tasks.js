@@ -1,21 +1,24 @@
 #!/usr/bin/node
 
 const request = require('request');
-
-request(process.argv[2], function (err, _res, body) {
-    const completedTasksByUsers = {};
-    body = JSON.parse(body);
-
-    for (let i = 0; i < body.length; ++i) {
-      const userId = body[i].userId;
-      const completed = body[i].completed;
-
-      if (completed && !completedTasksByUsers[userId]) {
-        completedTasksByUsers[userId] = 0;
-      }
-
-      if (completed) ++completedTasksByUsers[userId];
+request(process.argv[2], function (_error, _response, body) {
+  const myDict = {};
+  const b = JSON.parse(body);
+  let count = 0;
+  let num = 1;
+  for (let i = 0; i < b.length; i++) {
+    if (b[i].userId !== num) {
+      myDict[b[i].userId] = 0;
+      count = 1;
+      num = b[i].userId;
     }
-
-    console.log(completedTasksByUsers);
+    if (count === 0) {
+      myDict[b[i].userId] = 0;
+      count = 1;
+    }
+    if (b[i].completed) {
+      myDict[num]++;
+    }
+  }
+  console.log(myDict);
 });
