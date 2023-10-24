@@ -2,5 +2,11 @@
 
 const process = require('process');
 const fs = require('fs');
-f = fs.readdirSync(process.argv[1], 'utf-8');
-console.log(f);
+fs.readFile(process.argv[1], 'utf-8', (err, data) => {
+	if (err) {
+		console.error(err);
+	}
+	else {
+		console.log(data);
+	}
+});
